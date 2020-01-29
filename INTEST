@@ -1,0 +1,17 @@
+#include <stdio.h> 
+
+int main() {
+	// Read the input n, k
+	int n, k,c=0,i,h;
+	scanf("%d %d", &n, &k);
+	for(i=0;i<n;i++){
+	    scanf("%d",&h);
+	    if(h%k==0){
+	        c++;
+	    }
+	}
+printf("%d",c);
+
+	
+	return 0;
+}
