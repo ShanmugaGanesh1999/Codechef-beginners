@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main(void) {
+  int i;
+  float j;
+  scanf("%d %f",&i,&j);
+  if ((j>=0.0)&&(i>=0)&&(((float)i+0.5)<=j)&&(i%5==0)){
+      printf("%.2f",j-(float)i-0.5);
+  }else{
+      printf("%.2f",j);
+  }
+	return 0;
+}
