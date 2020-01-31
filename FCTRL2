@@ -1,0 +1,5 @@
+from math import factorial as fp
+i=int(input())
+for x in range(i):
+    j=int(input())
+    print(fp(j))
