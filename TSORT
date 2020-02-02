@@ -1,0 +1,7 @@
+i=int(input())
+a=[]
+for x in range(i):
+    a.append(int(input()))
+a.sort()
+for x in range(i):
+    print(a[x])
