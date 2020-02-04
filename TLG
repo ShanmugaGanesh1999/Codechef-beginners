@@ -1,0 +1,13 @@
+m,x,y=0,0,0
+for k in range(int(input())):
+    a,b = map(int,input().split(' '))
+    x+= a
+    y+= b
+    z=x-y
+    if m<abs(z):
+        if z>0:
+            p=1
+        elif z<0:
+            p=2
+        m=abs(z)
+print(str(p)+' '+str(m))
