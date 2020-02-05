@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main(void) {
+    int i,j,n,a,rem,rev=0;
+    scanf("%d",&n);
+    for(i=0;i<n;i++){
+        scanf("%d",&a);
+        while(a>0){
+            rem=a%10;
+            rev=(rev*10)+rem;
+            a/=10;
+        }printf("%d\n",rev);rev=0;
+    }
+	return 0;
+}
+
