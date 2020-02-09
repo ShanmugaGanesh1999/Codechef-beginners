@@ -1,0 +1,6 @@
+n=int(input())
+for x in range(n):
+    (a, b) = map(int, input().split(' '))
+    i=max(a, b)
+    j=a+b
+    print(i,j)
