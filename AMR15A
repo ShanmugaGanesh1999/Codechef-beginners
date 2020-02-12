@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main() {
+    int n,a[100],ev=0,od=0;
+    scanf("%d",&n);
+    for(int i=0;i<n;i++){
+        scanf("%d",&a[i]);
+    }
+    for(int i=0;i<n;i++){
+        if(a[i]%2==0)
+            ev++;
+        else
+            od++;
+    }
+    int red=ev>od?1:0;
+    if (red==1)
+        printf("READY FOR BATTLE");
+    else
+        printf("NOT READY");
+	return 0;
+}
+
