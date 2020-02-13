@@ -1,0 +1,7 @@
+i=int(input())
+for v in range(i):
+    x=input()
+    if(x==x[::-1]):
+        print("wins")
+    else:
+        print("losses")
