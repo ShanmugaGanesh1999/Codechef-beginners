@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main(void) {
+    int q=1;
+    while(1){
+        int q,f=0,i,a[100000],b[100000];
+        scanf("%d",&q);
+        if(q==0)
+            break;
+        for(i=0;i<q;++i){
+            scanf("%d",&a[i]);
+            b[a[i]-1]=i+1;
+            
+        }
+        for(i=0;i<q;++i){
+            if(a[i]==b[i])
+                f+=1;
+            }
+        if(f==q)
+            printf("ambiguous\n");
+        else
+            printf("not ambiguous\n");
+        }
+	return 0;
+}
+
