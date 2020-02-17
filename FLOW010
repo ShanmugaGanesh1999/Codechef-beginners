@@ -1,0 +1,13 @@
+#include<stdio.h>
+int  main(){
+  int T,i;
+  char ch;
+  scanf("%d",&T);
+  for(i=1;i<=T;i++){
+    scanf(" %c",&ch);
+    if(ch=='B'||ch=='b') printf("BattleShip\n");
+    else if(ch=='C'||ch=='c') printf("Cruiser\n");
+    else if(ch=='D'||ch=='d') printf("Destroyer\n");
+    else if(ch=='F'||ch=='f') printf("Frigate\n");
+}}
+
