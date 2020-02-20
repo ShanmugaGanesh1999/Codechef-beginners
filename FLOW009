@@ -1,0 +1,20 @@
+#include<stdio.h>
+int main()
+{
+	int T,q;
+	float p,tot;
+	scanf("%d",&T);
+	while(T--)
+	{
+		scanf("%d %f",&q,&p);
+		if(q>1000)
+		{
+			tot=(q*p)-(q*p)/10;
+		}
+		else
+		tot=q*p;
+		printf("%f\n",tot);
+	}
+	return 0;
+}
+	
