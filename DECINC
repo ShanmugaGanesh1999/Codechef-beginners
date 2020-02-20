@@ -1,0 +1,16 @@
+#include<stdio.h>
+int main()
+{
+    int n,i,j;
+    scanf("%d",&n);
+    if(n%4==0)
+    {
+        i=++n;
+        printf("%d",i);
+    }
+    else
+    {
+        j=--n;
+        printf("%d",j);
+    }
+}
