@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main()
+{
+    int t,bs;
+    float gs;
+    scanf("%d",&t);
+    while(t--)
+    {
+        scanf("%d",&bs);
+        if(bs>=1500)
+        {
+            gs=bs+500+(0.98*bs);
+        }
+        else
+        gs=bs+(0.1*bs)+(0.9*bs);
+        printf("%g\n",gs);
+    }
+}
