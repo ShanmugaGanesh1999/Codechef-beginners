@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main()
+{
+    int i,n,a,b,x,j;
+    scanf("%d",&n);
+    for(i=1;i<=n;i++)
+    {
+        scanf("%d%d",&a,&b);
+        x=a%2;
+        for(j=3;j<=b;j++)
+        {
+            if(a%j>x)
+            x=a%j;
+        }
+        printf("%d\n",x);
+
+    }
+    return 0;
+}
