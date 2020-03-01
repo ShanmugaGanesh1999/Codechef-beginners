@@ -1,0 +1,24 @@
+#include<stdio.h>
+
+int main()
+{
+    int t,i,qm,mind;
+    char s1[105],s2[105];
+    scanf("%d",&t);
+    while(t--)
+    {
+        mind=0;
+        qm=0;
+        scanf("%s",&s1);
+        scanf("%s",&s2);
+        for(i=0;s1[i]!='\0';i++)
+            if(s1[i]=='?' || s2[i]=='?')
+                    qm++;
+            else
+                if(s1[i]!=s2[i])
+                mind++;
+
+        printf("%d %d\n",mind,mind+qm);
+    }
+    return 0;
+}
