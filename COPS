@@ -1,0 +1,40 @@
+#include<stdio.h>
+main()
+{
+	int j,i,t,m,x,y,s;
+	scanf("%d",&t);
+	for(;t>0;t--)
+	{
+		scanf("%d%d%d",&m,&x,&y);
+		int c[m+2];
+		c[0]=0; c[m+1]=101+x*y;
+		for(i=1;i<=m;i++)
+		{
+			scanf("%d",&c[i]);
+		}
+		for(i=2;i<=m;i++)
+		{
+			if(c[i]<c[i-1])
+			{
+				for(j=i;j>1;j--)
+				{
+					if(c[j]<c[j-1])
+					{
+						s=c[j]; c[j]=c[j-1]; c[j-1]=s;
+					}
+					else break;
+				}
+			}
+		}
+ 
+		s=100-m;
+		for(i=1;i<=m;i++)
+		{ 
+			if(c[i]-x*y >c[i-1]) s=s-x*y;
+			else s=s-c[i]+c[i-1]+1;
+			if(c[i]+x*y < c[i+1]-x*y) s=s-x*y;
+			else if(c[i+1]-c[i]>x*y) s=s+c[i]-c[i+1]+1+x*y;
+		}
+		printf("%d\n",s);
+	}
+}
