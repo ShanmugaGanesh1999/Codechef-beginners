@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include<math.h>
+int main() {
+	long long int x,y,n,i,t,sum,flag;
+	scanf("%lld",&t);
+	while(t--){
+		scanf("%lld %lld",&x,&y);
+		sum=x+y;
+		
+		while(1){
+			flag = 0;
+			sum++;
+			long long int z = (long long int)sqrt(sum);
+			for(i=2;i<=z;i++){
+				if(sum%i==0){
+					flag=1;
+					break;
+				}
+			}
+			if(flag==0){
+				printf("%lld\n",sum-x-y);
+				break;
+			}
+		}
+	}
+	return 0;
+}
