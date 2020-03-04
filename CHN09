@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main(void) 
+{
+	int t,i;
+	scanf("%d",&t);
+	for(i=0;i<t;i++)
+	{
+		int answer,j;
+		char string[101];
+		scanf("%s",string);
+		int n=strlen(string);
+		int acount=0,bcount=0;
+		for(j=0;j<n;j++)
+		{
+			if(string[j]=='a')
+				acount++;
+			else
+				bcount++;
+		}
+		if(acount>bcount)
+			printf("%d\n",bcount);
+		else
+			printf("%d\n",acount);
+	}
+
+	return 0;
+}
