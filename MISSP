@@ -1,0 +1,23 @@
+#include <stdio.h>
+ 
+int main(void) {
+    // your code goes here
+    int t, n, d;
+    int a;
+        
+    scanf ("%d\n", &t);
+    while (t--) {
+        a = 0;
+        
+        scanf("%d\n", &n);
+        
+        while (n--) {
+            scanf("%d\n", &d);
+            a ^= d;
+        }
+        
+        printf("%d\n", a);
+    }
+    
+    return 0;
+}   
