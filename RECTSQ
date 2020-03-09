@@ -1,0 +1,25 @@
+#include<stdio.h>
+
+int gcm(int a,int b);
+int main(void){
+         int n,i,outputs[20],a,b,div;
+         
+         scanf("%d",&n);
+         for(i=0;i<n;i++){
+             scanf("%d",&a);
+             scanf("%d",&b);
+             div=gcm(a,b);
+             outputs[i]=(a*b/div)/div;
+         }
+         for(i=0;i<n;i++){
+            printf("%d \n",outputs[i]);
+         }
+         return 0;
+}
+
+int gcm(int a,int b){
+   if(a%b==0)
+       return b;
+   else
+       return gcm(b,a%b);
+}
