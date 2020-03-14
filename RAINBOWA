@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main(void) {
+	// your code goes here
+	int t;
+	scanf("%d",&t);
+	while(t--){
+		int n,i;
+		scanf("%d",&n);
+		int a[n];
+		for(i=0;i<n;i++)
+			scanf("%d",&a[i]);
+		for(i=0;i<n/2;i++)
+		{
+			if(a[i]!=a[n-i-1] || a[i]>a[i+1] ||a[i+1]-a[i]>1 || a[i]>7 || a[i] <1)
+				break;
+		}
+		if(i==n/2 && a[n/2]==7 && a[0]==1)
+			printf("yes\n");
+		else
+			printf("no\n");
+	}
+	return 0;
+} 
