@@ -1,0 +1,10 @@
+for _ in range(int(input())):
+    n = int(input())
+    s = set([int(x) for x in input().split()])
+    m = int(input())
+    f = set([int(x) for x in input().split()])
+    
+    if(s.intersection(f) == f):
+        print("Yes")
+    else:
+        print("No")
