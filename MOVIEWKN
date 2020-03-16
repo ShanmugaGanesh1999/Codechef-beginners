@@ -1,0 +1,15 @@
+for _ in range(int(input())):
+    n = int(input())
+    l = [int(x) for x in input().split()]
+    r = [int(x) for x in input().split()]
+    maxl = 0
+    index = 0
+    for i in range(len(l)):
+        if(l[i]*r[i] > maxl):
+            maxl = l[i]*r[i]
+            index = i
+        elif(l[i]*r[i] == maxl):
+            if(r[i]>r[index]):
+                index = i
+    print(index+1)
+            
