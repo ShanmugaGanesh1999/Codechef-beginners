@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include<string.h>
+int main(void) {
+    char a[27],b[13];
+    scanf("%s",a);
+    int n,count,i,j;
+    
+    scanf("%d",&n);
+    while(n--){
+        count=0;
+        scanf("%s",b);
+        
+        for(i=0;i<strlen(b);i++){
+            for(j=0;j<strlen(a);j++){
+                if(b[i]==a[j])
+                count++;
+            }
+        }
+        if(count==strlen(b))
+        printf("Yes\n");
+        else
+        printf("No\n");
+    }
+	// your code goes here
+	return 0;
+}
+
+
+
