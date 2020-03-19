@@ -1,0 +1,12 @@
+# cook your dish here
+# cook your dish here
+t=int(input())
+for _ in range(t):
+    c,d,l=map(int,input().split())
+    ma=c*4+d*4
+    mi=d*4+max(0,(c-2*d)*4)
+    # print(mi)
+    if(l>=mi and l<=ma and l%4==0):
+        print("yes")
+    else:
+        print("no")
