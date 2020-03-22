@@ -1,0 +1,16 @@
+# cook your dish here
+t=int(input())
+while t>0:
+    n,k=map(int,input().split())
+    l=list(map(int,input().split()))
+    c=0
+    for i in range(n):
+        mod=l[i]%k
+        if mod>k/2:
+            c+=k-mod
+        elif l[i]-mod>0:
+            c+=mod
+        else:
+            c+=k-mod
+    print(c)
+    t-=1
