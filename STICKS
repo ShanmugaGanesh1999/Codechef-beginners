@@ -1,0 +1,21 @@
+t = int(input())
+while t!=0:
+    n = int(input())
+    a = list(map(int,input().split()))
+    b = [0]*(10**3)
+    c = [0]*n
+    k = 0
+    
+    for i in range(n):
+        c[a[i]]+=1
+        if (c[a[i]]==2 or c[a[i]]==4):
+            b[k] = a[i]
+            k+=1
+    b.sort()
+    if k<2:
+        
+        print("-1")
+    else:
+        print(b[-2]*b[-1])
+    
+    t-=1
