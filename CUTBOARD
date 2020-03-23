@@ -1,0 +1,13 @@
+#include<stdio.h>
+int main()
+{
+int t,n,m,i,ans;
+scanf("%d",&t);
+	for(i=0;i<t;i++)
+	{ scanf("%d %d",&n,&m);
+	  ans=(n-1)*(m-1);
+	  printf("%d\n",ans);
+	}
+ 
+return 0;
+}
