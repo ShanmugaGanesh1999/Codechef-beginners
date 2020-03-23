@@ -1,0 +1,18 @@
+t = int(input())
+for _ in range(t):
+    n, b, m = map(int, input().split())
+
+    faltam = n
+    tempo = 0
+    while faltam:
+        if n % 2 == 1:
+            n += 1
+
+        done = int(n / 2)
+        faltam -= done
+        n = faltam
+
+        tempo += b + (m * done)
+        m *= 2
+
+    print(int(tempo - b))
