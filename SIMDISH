@@ -1,0 +1,12 @@
+# cook your dish here
+for _ in range(int(input())):
+    ar1=[i for i in input().split()]
+    ar2=[i for i in input().split()]
+    flag=0;
+    for i in range(4):
+        if ar1[i]in ar2:
+            flag=flag+1;
+    if(flag<2):
+        print("dissimilar")
+    else:
+        print("similar")
