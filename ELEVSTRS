@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<math.h>
+main()
+{
+   int t,i,v1,v2,N;
+   float d,y;
+   scanf("%d",&t);
+   for(i=0;i<t;i++)
+      {
+          scanf("%d%d%d",&N,&v1,&v2);
+          d=(sqrt(2)*N)/(float)(v1) ;
+          y = (2*N)/(float)(v2);
+             if(y<d)
+                printf("Elevator\n");
+             else
+                printf("Stairs\n");
+      }
+      }
