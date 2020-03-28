@@ -1,0 +1,16 @@
+# cook your dish here
+n = int(input())
+for i in range(n):
+    s = input()
+    a = s[0]
+    b = s[1]
+    count=0
+    for i in range(2,len(s)):
+        if(i%2==0 and s[i]==s[0]):
+            count+=1 
+        elif(i%2!=0 and s[i]==s[1]):
+            count+=1
+    if(count==len(s)-2 and s[0]!=s[1]):
+        print("YES")
+    else:
+        print("NO")
