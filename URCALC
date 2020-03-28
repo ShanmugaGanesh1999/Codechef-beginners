@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main(void) {
+int a,b;
+scanf("%d\n",&a);
+scanf("%d\n",&b);
+char c;
+scanf("%c",&c);
+switch(c)
+{
+     case '+' :
+         printf("%d\n",a+b );
+         break;
+      case '-' :
+         printf("%d\n",a-b );
+         break;
+      case '*' :
+         printf("%d\n",a*b );
+         break;
+      case '/' :
+         printf("%f\n",(double)a/(double)b );
+         break;
+      default :
+         printf("Invalid operation\n" );
+}
+	return 0;
+}
+
