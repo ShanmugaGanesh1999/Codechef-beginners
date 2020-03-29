@@ -1,0 +1,16 @@
+# cook your dish here
+try:
+    for _ in range(int(input())):
+        s=input()
+        count1,count2=0,0
+        for i in range(len(s)):
+            if s[i]=='0':
+                count2+=1
+            else:
+                count1+=1
+        if count1>count2:
+            print("WIN")
+        else:
+            print("LOSE")
+except:
+    pass
