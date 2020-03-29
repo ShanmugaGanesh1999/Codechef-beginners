@@ -1,0 +1,11 @@
+# cook your dish here
+try:
+    for _ in range(int(input())):
+        n,k=map(int,input().split())
+        a=list(map(int,input().split()))
+        a.sort()
+        new=a[k:(n-k)]
+        print(sum(new)/len(new))
+except:
+    pass
+        
