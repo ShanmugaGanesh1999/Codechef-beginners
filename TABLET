@@ -1,0 +1,24 @@
+#include <stdlib.h>
+#include<stdio.h>
+int main(int argc, char const *argv[])
+{
+	int T , N , B , W , H , P;
+	scanf("%d",&T);
+	while(T--)
+	{
+		int area = 0;
+		scanf("%d %d",&N  , &B);
+		while(N--)
+		{
+			scanf("%d %d %d",&W ,&H , &P);
+			if(area < W * H && P <= B)
+					area = W * H;
+
+		}
+		if(area != 0)
+			printf("%d\n",area );
+		else
+			printf("no tablet\n");
+	}
+	return 0;
+}
