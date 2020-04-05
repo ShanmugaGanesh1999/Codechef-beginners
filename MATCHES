@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+int main(void) {
+	int T;
+	scanf("%d",&T);
+	for(int i=0;i<T;i++)
+	{
+	    int A,B;
+	    scanf("%d%d",&A,&B);
+	    int C;
+	    C=A+B;
+	    int d;
+	    int s1=0,s2=0,s3=0,s4=0,s5=0,s6=0;
+	    while(C>0)
+	    {
+	        d=C%10;
+	        if(d==0||d==6||d==9)
+	        {
+	            
+	            s1+=6;
+	        }
+	        else if(d==2||d==3||d==5)
+	        {
+	            
+	            s2+=5;
+	        }
+	        else if(d==4){
+	            
+	            s3+=4;
+	        }
+	        else if(d==7)
+	        {
+	            
+	            s4+=3;
+	        }
+	        else if(d==8)
+	        {
+	            
+	            s5+=7;
+	        }
+	        else if(d==1){
+	            
+	            s6+=2;
+	        }
+	        C=C/10;
+	    }
+	    int X=s1+s2+s3+s4+s5+s6;
+	    printf("%d\n",X);
+	}
+	return 0;
+}
+
