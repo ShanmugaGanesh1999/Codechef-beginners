@@ -1,0 +1,21 @@
+#include <stdio.h>
+int main()
+{
+	char s;
+	int a,b,c,d;
+	a=b=c=d=0;
+	while(s!='\n')
+	{
+		s=getchar();
+		if(s=='C')
+			a++;
+		else if(s=='H' && b<a)
+			b++;
+		else if(s=='E'&& c<b)
+			c++;
+		else if(s=='F' && d<c)
+			d++;
+	}
+	printf("%d\n",d);
+	return 0;
+} 
