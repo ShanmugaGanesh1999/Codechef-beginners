@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(void) {
+    int t, i;
+    int n, s, l;
+    scanf("%d" ,&t);
+    for(i=0;i<t;i++){
+        s=0;
+        scanf("%d" ,&n);
+        while(n>0){
+            l=sqrt(n);
+            n=n-(l*l);
+            s++;
+        }
+        printf("%d\n" ,s);
+    }
+	return 0;
+}
+
