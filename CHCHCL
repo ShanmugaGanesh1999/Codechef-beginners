@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main()
+{
+	int t,i,n,m,a;
+	scanf("%d",&t);
+	for(i=0;i<t;i++)
+	{
+		a=0;
+		scanf("%d%d",&n,&m);
+		a=m*n;
+		if(a%2==0)
+		printf("Yes\n");
+		else
+		printf("No\n");
+	}
+	return 0;
+}
