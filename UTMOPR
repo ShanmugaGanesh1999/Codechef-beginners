@@ -1,0 +1,11 @@
+for _ in range(int(input())):
+    n, k = map(int, input().split())
+    a = list(map(int, input().split()))
+    s = sum(a)
+    if k == 1:
+        if s%2 == 0:
+            print('odd')
+        else:
+            print('even')
+    else:
+        print('even')
