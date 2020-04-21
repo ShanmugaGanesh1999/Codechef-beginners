@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main(void) {
+	// your code goes here
+	int t;
+	scanf("%d",&t);
+	while(t--)
+    {
+        int n,i,count=0;
+        scanf("%d",&n);
+        char str[n+1];
+        scanf("%s",str);
+        for(i=1;i<n;i++)
+        {
+            if((str[i]=='a')||(str[i]=='e')||(str[i]=='i')||(str[i]=='o')||(str[i]=='u'))
+            {
+                if((str[i-1]!='a')&&(str[i-1]!='e')&&(str[i-1]!='i')&&(str[i-1]!='o')&&(str[i-1]!='u'))
+                    count++;
+            }
+        }
+        printf("%d\n",count);
+    }
+	return 0;
+}
+
