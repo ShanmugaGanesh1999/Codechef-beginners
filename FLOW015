@@ -1,0 +1,19 @@
+t = int(input())
+days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
+for each_t in range(t):
+    year = int(input())
+    s = 0
+    if year >= 2001:
+        for i in range(2001, year):
+            if (i % 4 == 0 and i % 100 != 0) or (i % 400 == 0):
+                s += 366
+            else:
+                s += 365
+        print(days[s % 7])
+    else:
+        for i in range(year, 2001):
+            if (i % 4 == 0 and i % 100 != 0) or (i % 400 == 0):
+                s += 366
+            else:
+                s += 365
+        print(days[-1 * (s % 7)])
