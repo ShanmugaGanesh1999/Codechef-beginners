@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main(void) {
+	// your code goes here
+	int t,i;
+	scanf("%d",&t);
+	for (i=0;i<t;i++)
+	{
+	    int x,y;
+	    scanf("%d %d",&x,&y);
+	    if (x<=y)
+	    printf("0\n");
+	    else if((x%y)==0)
+	    printf("%d\n",(y));
+	    else
+	    printf("%d\n",(x%y));
+	}
+	return 0;
+}
+
