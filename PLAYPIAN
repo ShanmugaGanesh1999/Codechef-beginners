@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include<string.h>
+int main(void) {
+	// your code goes here
+	int i,j,q;
+	char c[1000];
+	scanf("%d",&q);
+	for(j=0;j<q;j++)
+	{
+	    scanf("%s",&c);
+	for(i=0;i<strlen(c);i+=2)
+	if(c[i]==c[i+1])
+	{
+	    printf("no\n");
+	    break;
+	}
+	if(i==strlen(c))
+	printf("yes\n");
+	}
+	return 0;
+}
+
