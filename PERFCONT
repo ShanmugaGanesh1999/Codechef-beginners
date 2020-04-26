@@ -1,0 +1,17 @@
+# cook your dish here
+t=int(input())
+while t:
+    t-=1
+    n,p=map(int,input().split())
+    arr=list(map(int,input().split()))
+    hard=0
+    easy=0
+    for i in arr:
+        if i>=p//2:
+            easy+=1
+        elif i<=p//10:
+            hard+=1
+    if easy==1 and hard==2:
+        print("yes")
+    else:
+        print("no")
