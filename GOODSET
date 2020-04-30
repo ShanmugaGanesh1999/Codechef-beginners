@@ -1,0 +1,17 @@
+#include<stdio.h>
+int main()
+{
+	int t,i,j=100,n;
+	scanf("%d",&t);
+	while(t--)
+	{
+		scanf("%d",&i);
+		for (n=0;n<i;n++)
+		{
+			printf("%d ",j);
+			j++;	
+		}
+		j=100;
+    }
+    return 0;
+}   
