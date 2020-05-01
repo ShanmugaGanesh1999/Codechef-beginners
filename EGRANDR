@@ -1,0 +1,21 @@
+t=int(input())
+for i in range(t):
+    n=int(input())
+    
+    a=list(map(int,input().split()))
+    fail=0
+    full=0
+
+    for x in range(n):
+        if a[x]==2:
+            fail=1
+            break
+        if a[x]==5:
+            full=1
+    if fail==1 or full==0:
+        print("No")
+    else:
+        if sum(a)/n>=4:
+            print("Yes")
+        else:
+            print("No")
