@@ -1,0 +1,22 @@
+#include<stdio.h>
+int main()
+{
+    int T,count,i,j;
+    char S[10];
+    scanf("%d",&T);
+    while(T>0)
+    {   count=0;
+        scanf("%s",S);
+        if(S[0]!=S[7])
+            count++;
+        for(i=0;i<7;i++)
+            if(S[i]!=S[i+1])
+               count++;
+        if(count<=2)
+            printf("uniform\n");
+        else
+            printf("non-uniform\n");
+        T--;
+    }
+    return 0;
+}
