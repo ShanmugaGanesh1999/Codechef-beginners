@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main(void) {
+	int n,c;
+	scanf("%d %d",&n,&c);
+	while(n--)
+	{
+	   int a;
+	   scanf("%d",&a);
+	   if(a>=c)
+	   printf("Good boi\n");
+	   else
+	   printf("Bad boi\n");
+	}
+	return 0;
+}
+
