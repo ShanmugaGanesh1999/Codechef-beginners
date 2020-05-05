@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<math.h>
+ int main()
+ {
+ 	long long int i,q,a,b;
+ 	scanf("%lld",&q);
+ 	i=0;
+ 	while(i<q)
+ 	{
+ 		scanf("%lld %lld",&a,&b);
+ 		if(a%2==0)
+ 		{
+ 			if((b==(a-1))||(b==(a+2))||(b==(a-2)))
+			{
+				printf("YES\n");	
+			}	
+			else
+			{
+				printf("NO\n");
+			}
+		}
+		else
+		{
+			if((b==(a+1))||(b==(a-2))||(b==(a+2)))
+			{
+				printf("YES\n");
+			}
+			else
+			{
+				printf("NO\n");
+			}
+		}
+		i++;
+	}
+	return 0;
+ }
