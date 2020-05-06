@@ -1,0 +1,23 @@
+#include<stdio.h>
+
+int main(void)
+{
+	int j=0,t,k;
+	scanf("%d",&t);
+	for(k=0;k<t;k++)
+	{
+		int i;
+		char a[21];
+		scanf("%s",a);
+		for(i=0;a[i]!='\0';i++)
+		{
+			 if(a[i]=='c'&&a[i+1]=='h'||a[i]=='h'&&a[i+1]=='e'||a[i]=='e'&&a[i+1]=='f')
+            		{
+			    	j++;
+            			break;
+            		}
+		}	
+	}
+	printf("%d\n",j);
+	return 0;
+}
