@@ -1,0 +1,18 @@
+#include<stdio.h>
+main()
+{
+int i,k,t,N,s,j;
+scanf("%d",&t);
+for(i=0;i<t;i++)
+{
+int co=0;
+scanf("%d",&N);
+for(k=1;k<=N;k++)
+{
+scanf("%d %d",&s,&j);
+if(j-s > 5)
+co++;
+}
+printf("%d\n",co);
+}
+}
