@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main()
+{
+	int t,flag=0,n,i;
+	char c,a[10]={'\0'};
+	scanf("%d",&t);
+	fflush(stdin);
+	while(t--)
+	{
+		scanf("%d",&n);
+		scanf("%s",a);
+		c=a[0];
+		for(i=1;i<n;i++)
+		{ 
+			scanf("%s",a);
+			if(c=='c'&&a[0]!='m')
+			flag=1;
+			c=a[0];
+		}
+		if(flag==1||a[0]=='c')
+		printf("NO\n");
+		else
+		printf("YES\n");
+		flag=0;
+	}
+	return 0;
+}
