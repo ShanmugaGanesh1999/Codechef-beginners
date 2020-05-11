@@ -1,0 +1,21 @@
+# cook your dish here
+for _ in range(int(input())):
+    n = int(input())
+    first = input()
+    second = input()
+    
+    li=[int(x) for x in input().split()]
+    count=0
+    m = 0
+    for i in range(n):
+        if(first[i]==second[i]):
+            count+=1
+        
+    if(count==n):
+        print(li[n])
+    else:
+        ans=0
+        for i in range(0,count+1):
+            ans = max(ans,li[i])
+        print(ans)
+        
