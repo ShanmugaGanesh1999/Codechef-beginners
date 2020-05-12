@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	int n,i,j;
+	scanf("%d",&n);
+	while(n--)
+	{
+		int x,cha,i,j,t;
+		scanf("%d",&x);
+		char s[x][20],s1[x][20];
+		for(i=0;i<x;i++)
+		scanf("%s %s",s[i],s1[i]);	
+		for(i=0;i<x;i++)
+		{
+			t=0;
+			for(j=0;j<x;j++)
+			{
+				if(strcmp(s[i],s[j])==0)
+				t++;
+			}
+			if(t>=2)
+			printf("%s %s\n",s[i],s1[i]);
+			else
+			printf("%s\n",s[i]);
+		}
+	}
+	return 0;
+}
