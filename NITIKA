@@ -1,0 +1,17 @@
+# cook your dish here
+try:
+    n=int(input())
+    for l in range(n):
+        x=input().split()
+        res=str()
+        if(len(x)==1):
+            print(x[0].capitalize())
+        else:
+            for i in range(len(x)-1):
+                r=x[i]
+                res=res+(r[:1].capitalize())+". "
+            res=res+(x[len(x)-1].capitalize())
+            print(res)
+except EOFError as e:
+    pass
+        
