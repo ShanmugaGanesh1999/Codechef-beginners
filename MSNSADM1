@@ -1,0 +1,30 @@
+#include <stdio.h>
+int main()
+{
+    int t,i,n;
+    scanf("%d",&t);
+    while(t--)
+    {
+        int max=0;
+        scanf("%d",&n);
+        int a[n],b[n],temp[n];
+        for(i=0;i<n;i++)
+        {
+            scanf("%d",&a[i]);
+        }
+        for(i=0;i<n;i++)
+        {
+            scanf("%d",&b[i]);
+        }
+        for(i=0;i<n;i++)
+        {
+            temp[i]=(a[i]*20-b[i]*10);
+        }
+        for(i=0;i<n;i++)
+        {
+            if(temp[i]>max)
+                max=temp[i];
+        }
+         printf("%d\n",max);
+    }  
+}
