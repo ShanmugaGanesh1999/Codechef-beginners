@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void){
+    int t, x1,x2,x3,v1,v2;
+    scanf("%d", &t);
+    while(t--){
+        scanf("%d%d%d%d%d", &x1, &x2, &x3, &v1, &v2);
+        float t1 = (float)abs(x3-x1)/v1;
+        float t2 = (float)abs(x3-x2)/v2;
+
+        if(t1<t2)
+            printf("Chef\n");
+        else if(t1>t2)
+            printf("Kefa\n");
+        else
+            printf("Draw\n");
+
+    }
+    return 0;
+}
