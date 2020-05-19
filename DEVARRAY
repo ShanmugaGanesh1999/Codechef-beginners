@@ -1,0 +1,11 @@
+# cook your dish here
+x=list(map(int,input().split()))
+y=list(map(int,input().split()))
+a=min(y)
+b=max(y)
+for i in range(x[1]):
+    j=int(input())
+    if j>=a and j<=b:
+        print('Yes')
+    else:
+        print('No')
