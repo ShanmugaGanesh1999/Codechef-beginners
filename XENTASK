@@ -1,0 +1,16 @@
+# cook your dish here
+t=int(input())
+for _ in range(t):
+    n=int(input())
+    xenny=list(map(int,input().split()))
+    yana=list(map(int,input().split()))
+    first,second=0,0
+    for i in range(n):
+        if i%2==0:
+            first+=xenny[i]
+            second+=yana[i]
+        else:
+            first+=yana[i]
+            second+=xenny[i]
+    print(min(first,second))
+        
