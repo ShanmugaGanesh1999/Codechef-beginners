@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main()
+{
+ long long int a[101],i,t;
+ scanf("%lld",&t);
+ while(t--){
+ for(i=0;i<=29;i++)
+ {
+ scanf("%lld",&a[i]);
+ }
+  for(i=0;i<=29;i++)
+ {
+if((a[i]==1)&&(a[i+1]==1)&&(a[i+2]==1)&&(a[i+3]==1)&&(a[i+4]==1)&&(a[i+5]==1))
+    break;
+ }
+if(i==30)
+    printf("#allcodersarefun\n");
+ else
+ printf("#coderlifematters\n");
+ }
+   return 0;
+
+}
