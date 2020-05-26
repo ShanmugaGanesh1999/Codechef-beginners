@@ -1,0 +1,9 @@
+try:
+    from re import findall
+    u='U+'
+    d='D+'
+    for i in range(int(input())):
+        s=input()
+        print(min(len(findall(u,s)),len(findall(d,s))))
+except EOFError:
+    pass
