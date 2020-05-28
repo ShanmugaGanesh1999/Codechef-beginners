@@ -1,0 +1,28 @@
+#include<stdio.h>
+int main(){
+	int t;
+	scanf("%d", &t);
+	while(t--){
+		int n, m;
+		scanf("%d%d", &n, &m);
+		char a[11][11];
+		int i, j;
+		for(i = 0; i < n; i++){	
+			scanf("%s", &a[i]);	
+		}
+		int count[10] = {0};
+		for(j = 0; j < m; j++){
+			for(i = 0; i < n; i++){
+				if(a[i][j] == '1') count[j]++;
+			}
+		}
+		int sum = 0;
+		for(j = 0; j < m; j++){
+			if(count[j] > 1){
+				sum += (count[j]*(count[j] - 1)) / 2;
+			}
+		}
+		printf("%d\n", sum);
+	}
+	return 0;
+}				
