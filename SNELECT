@@ -1,0 +1,21 @@
+for _ in range(int(input())):
+    string = list(input())
+    
+    for i in range(0,len(string)-1):
+        if string[i] == 's' and string[i+1] == 'm':
+            string[i] = '*'
+            string[i+1] = 'M'
+            
+        elif string[i] == 'm' and string[i+1] == 's':
+            string[i] = 'M'
+            string[i+1] = '*'
+
+    # print(string)
+    cm = string.count('m')+string.count('M')
+    cs = string.count('s')
+    if(cs>cm):
+        print("snakes")
+    elif (cs<cm):
+        print("mongooses")
+    else:
+        print("tie")
