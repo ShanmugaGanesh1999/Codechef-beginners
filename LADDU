@@ -1,0 +1,51 @@
+#include <stdio.h>
+int main()
+{
+	int t;
+	scanf("%d",&t);
+	while(t--)
+	{
+		int act,div,i,rank,bug;
+		int tot=0;
+		char origin[50],a[100];
+		scanf("%d %s",&act,origin);
+		if(origin[0]=='I')
+		div=200;
+		else
+		div=400;
+		for (i=0;i<act;i++)
+		{
+		    scanf("%s",a);
+		    if(a[0]=='C')
+		    {
+		    	if(a[8]=='H')
+		    	{
+		    		tot=tot+50;
+		    	}
+		    	else
+		    	{
+		    		scanf("%d",&rank);
+		    		tot=tot+300;
+		    		if(rank<20)
+		    		{
+		    			tot=tot+20-rank;
+		    		}
+		    	}
+		    }
+		    else if(a[0]=='T')
+		    {
+		    	tot=tot+300;
+		    }
+		    else
+		    {
+		    	scanf("%d",&bug);
+		    	tot=tot+bug;
+		    }
+		    
+		}
+		
+		tot=(tot/div);
+		    printf("%d\n",tot);
+		
+	}
+}
