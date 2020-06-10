@@ -1,0 +1,14 @@
+t=int(input())
+for _ in range(t):
+    a,b=input().split()
+    s=int(a) + int(b)
+    A=list(a)
+    B=list(b)
+    for i in range(len(A)):
+        for j in range(len(B)):
+            A[i],B[j] = B[j],A[i]
+            temp = int("".join(A)) + int("".join(B))
+            if temp>s:
+                s=temp
+            A[i],B[j] = B[j],A[i]
+    print(s)
