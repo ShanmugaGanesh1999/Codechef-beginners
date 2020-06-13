@@ -1,0 +1,17 @@
+def compareLists(li2, li1):
+    li = [True if li1[i] >= li2[i] else False for i in range(len(li1)) ]
+    return all(li)
+
+t = int(input())
+for _ in range(t):
+    n = int(input())
+    f = list(map(int,input().split()))
+    s = list(map(int,input().split()))
+    if compareLists(f, s) and compareLists(f, s[::-1]):
+        print("both")
+    elif compareLists(f, s[::-1]):
+        print("back")
+    elif compareLists(f, s):
+        print("front")
+    else:
+        print("none")
