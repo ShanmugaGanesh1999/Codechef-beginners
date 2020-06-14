@@ -1,0 +1,40 @@
+#include<stdio.h>
+
+int main(){
+	int t,n,i,pos[5];
+	char str[11];
+	scanf("%d",&t);
+	while(t--){
+		scanf("%d",&n);
+		for(i=0;i<5;i++)
+		pos[i]=0;
+		n++;
+		while(n--){
+			gets(str);
+			switch(str[0]){
+				case 'c' : pos[0]=1;
+				break;
+				case 's' : pos[1]=1;
+				break;
+				case 'e' :	if(str[4] != '\0')
+							pos[3]=1;
+							else pos[2]=1;
+				break;
+				case 'm' : if(str[6] != '\0')
+							pos[4]=1;
+							else
+							pos[3]=1;
+				break;
+				case 'h' : pos[4]=1;
+			}	
+		}
+		for(i=0;i<5;i++)
+		{
+		if(!pos[i]){
+			break;
+		}	
+		}
+		i==5 ? printf("Yes\n") : printf("No\n");
+	}
+	return 0;
+}
