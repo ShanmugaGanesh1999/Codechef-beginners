@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main(void) {
+	int t,i,count=0;
+	long long int n,x;
+	long long int a[1000];
+	
+	scanf("%d",&t); 
+	while(t--)
+	{ 
+	    count=0;
+	    scanf("%lld %lld",&n,&x);
+	    
+	    for(i=0;i<n;i++)
+	        scanf("%lld",&a[i]);
+	        
+	    for(i=0;i<n;i++)
+	    {
+	        if(a[i]>=x)
+	        {
+	        
+	            count++;
+	            
+	        }
+	    } 
+	    if(count>0)
+	       printf("YES\n");
+	    else
+	       printf("NO\n");
+	}
+	
+	return 0;
+}
+
