@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main(void) {
+	int t,n,k,i,gp[100],left;
+	scanf("%d",&t);
+	while(t--)
+    {
+        left=0;
+	    scanf("%d",&n);
+	    scanf("%d",&k);
+	    for(i=0;i<n;i++)
+	    scanf("%d",&gp[i]);
+	    for(i=0;i<n;i++)
+	    {
+	        if((gp[i]+left)>=k)
+	        left=(gp[i]+left)-k;
+	        else
+	        break;
+	    }
+	    if(i<n)
+	    printf("NO %d\n",i+1);
+	    else
+	    printf("YES\n");
+    }
+}
+
+
+
