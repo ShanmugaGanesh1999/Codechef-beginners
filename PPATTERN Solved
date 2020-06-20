@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main(void) {
+	// your code goes here
+	int t;
+	scanf("%d",&t);
+	int k;
+	for(k=0;k<t;k++)
+	{
+	    int n;
+	    scanf("%d",&n);
+	    int i,j,c=0,a,p;
+	    for(i=1;i<=n;i++)
+	    {
+	        c=c+i;
+	        a=c;
+	        printf("%d ",c);
+	        for(j=i;j<n;j++)
+	        {
+	            printf("%d ",a+j);
+	            a=a+j;
+	        }
+	        for(p=n-i;p<n-1;p++)
+	        {
+	            j--;
+	            a=a+j;
+	            printf("%d ",a);
+	        }
+	        printf("\n");
+	    }
+	}
+	return 0;
+}
+
