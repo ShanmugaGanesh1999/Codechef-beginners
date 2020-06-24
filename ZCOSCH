@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main()
+{
+	int rank;
+	scanf("%d", &rank);
+
+	if ((rank > 0) && (rank <= 50))
+		printf("100\n");
+	else if ((rank > 50) && (rank <= 100))
+		printf("50\n");
+	else
+		printf("0\n");
+}
