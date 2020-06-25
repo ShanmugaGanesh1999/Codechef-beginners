@@ -1,0 +1,10 @@
+# cook your dish here
+test = int(input())
+for _ in range(test):
+    x,y,k = map(int,input().split(' '))
+    sum1 = x+y;
+    turn= sum1//k;
+    if(turn % 2 == 0):
+        print("CHEF")
+    else:
+        print("COOK")
