@@ -1,0 +1,8 @@
+# cook your dish here
+for _ in range(int(input())):
+    n,k=map(int,input().split())
+    array=[int(i) for i in input().split()]
+    x=[]
+    for i in range(n-(k-1)):
+        x.append(sum(array[i:i+k]))
+    print(max(x))
