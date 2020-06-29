@@ -1,0 +1,29 @@
+#include <stdio.h>
+inline int get()
+{
+    int n=0,c;
+    while((c=getchar_unlocked())>='0' && c<='9')
+    n=(n<<3)+(n<<1)+(c&15);
+    return n;   
+}
+int main(void) {
+	int t,n,a,i,b,c;
+	t=get();
+	while(t--)
+	{
+	    n=get();
+	    b=0;
+	    c=n;
+	    for(i=0;i<n;i++)
+	    {
+	        a=get();
+	        if(a==0&&b==0)
+	        c=i;
+	        if(a==0)
+	        b++;
+	    }
+	    printf("%d\n",b*1000+(n-c)*100);
+	}
+	return 0;
+}
+ 
