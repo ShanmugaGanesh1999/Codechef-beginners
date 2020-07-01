@@ -1,0 +1,23 @@
+#include<stdio.h>
+int main() {
+    int i,a,b,max,n,sec=0;
+    scanf("%d",&n);
+    scanf("%d",&a);
+    max=a;
+    while(n-1!=0) {
+        scanf("%d",&b);
+        if(b>max) {
+            sec=max;
+            max=b;
+        }
+
+        else if(b<max && b>sec)
+            sec=b;
+        else{}
+        n--;
+    }
+
+    printf("%d",sec);
+
+    return 0;
+}
