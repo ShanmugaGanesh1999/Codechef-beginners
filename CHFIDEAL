@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main(void) {
+	// your code goes here
+int x;
+printf("%d\n",3);
+fflush(stdout);
+scanf("%d",&x);
+
+if(x==2)
+{
+printf("%d\n",1);
+fflush(stdout);
+}
+else if(x==1)
+{
+printf("%d\n",2);
+fflush(stdout);
+}
+	return 0;
+}
+
