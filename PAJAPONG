@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main()
+{
+    int t,n,x,y,k;
+    scanf("%d",&n);
+    while(n--)
+    {
+        scanf("%d%d%d",&x,&y,&k);
+        t=x+y;
+        if((t/k)%2==1)
+        {
+            printf("Paja\n");
+        }
+        else
+        {
+            printf("Chef\n");
+        }
+    }
+}
