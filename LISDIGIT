@@ -1,0 +1,123 @@
+/**
+ * https://www.codechef.com/problems/LISDIGIT
+ *
+ * C99 strict
+ *
+ * Output is the same as input.
+ * 
+ * Proof:
+ *  Lets take an arbitrary sequence A and inspect generation of LIS array
+ *  from that sequence. Following proof will demonstrate that several different
+ *  sequences of digits can produces same LIS array and if LIS array is treated
+ *  as initial sequence itself, LIS array produced from it would be identical to
+ *  the initial sequence:
+ *
+ *  For every seq A 
+ *  > there exists seq B such as LIS(A) = LIS(B).
+ *  > LIS(LIS(A)) = LIS(A).
+ *
+ * To generate LIS(A) lets construct and transform a tree.
+ *
+ * 1) make a root S just to hold the tree. Lvl 0 size of tree is 1.
+ * 2) to S add a leaf node for every A_i, associating this element of sequence with
+ *    the node - lvl 1 size of tree is n
+ * 3) for every lvl 1 node A_i add a leaf node associated with A_j IF
+ *    (j > i and A_j > A_i) - so to A_i you add leaf for every element that could
+ *    be in a increasing subsequence to it (by standards of subsequence of A, defined
+ *    with this problem) - size of lvl 2 is LESS then n*(n-1)
+ * 4) repeat step 3 for every following level of the tree - 3, 4, ..., n
+ *
+ * NOTE: process 1-4 is finite as long is n is finite. The deepest level possible is 
+ * lvl n, that will happen if A_j > A_i for every j=i+1
+ * The tree represents EVERY possible increasing subsequence of A.
+ *
+ * 5) Lets inspect a tree we built and find the deepest level. Let it be level m. 
+ *    1 <= m <= n.
+ *    Clearly, if there is a node on level m >=1, there should be at least one node on
+ *    level m-1, by nature of trees - how would level m be reached otherwise?
+ * 
+ * 6) With every element A_i on level m associate LIS value m, since there's a sequence
+ *    form lvl 1 to lvl m constructed by rules of LIS and ending with element A_i:
+ *    LIS(A_i) = m
+ * 
+ * 7) If this element A_i is represented in another node on levels above in the tree, 
+ *    remove(prune) those nodes above from the tree.
+ *
+ * 8) Repeat steps 6-7 until and including lvl 1, this will accurately determine 
+ *    LIS values for every element of sequence A.
+ *
+ * After pruning is done:
+ * --- no element of A is lost - for every i from 1 to n there still a node
+ * in a tree associated with element A_i of A.
+ * --- every element of A is now having an assosiated LIS value
+ * --- if A_i is on level r of the tree, you are guaranteed it will only be
+ * present on level r and not above or below. There might be multiple instances of 
+ * A_i on level r, though (reached from S by different paths).
+ * --- if A_i is on level r you are guaranteed that LIS(i) = r
+ * 
+ * NOTE: right now we have a tree, and each node (exluding S) we have three associated
+ * values - i (index in given sequence A), A_i - value of element of sequence by that
+ * index and LIS(i) - LIS value associated with that element value, so i -> A_i -> LIS(i)
+ *
+ * Now, lets consider a sequence B, in which 
+ * B_i = 1   if A_i present on lvl 1 after pruning
+ * B_i = A_i if A_i is not present on lvl 1 after pruning
+ *
+ * If we repeat the same steps of building a tree, associating LIS values and pruning,
+ * sequence B would generate the same tree structure. Indeed, step (1) is trivial,
+ * step (2) doesn't depend on values of B_i, step (3) would not miss any leafs present
+ * in the original tree, bc value of 1 is minimal and can start any LIS subsequence, and
+ * will not create and extra leafs bc value 1 can't be non-initial element in LIS 
+ * subsequence.
+ * Ofc same guarantees that pruning will happen to elements with same indexes like in
+ * orignial tree, leaving new tree with nodes on lvl 1 which all have 
+ * element value 1, LIS value 1.
+ *
+ * Repeat argumentation for sequence C similar to sequence B, only
+ * C_i = 2 if B_i is present on lvl 2 of tree built from B after pruning
+ * C_i = B_i otherwise.
+ * Again, it will produce a tree of identical structure and will generate identical
+ * LIS values as trees for A and B - LIS(A) = LIS(B) = LIS(C)
+ *
+ * Repeatedly adjusting sequence we can (ALWAYS) come to a sequence Z, that will have
+ * following property Z_i = LIS(i) = level of tree on which nodes associated with this
+ * element can be found.
+ *
+ * To sum it up. For any sequence A there exist sequence Z that 
+ * a) LIS(Z) = LIS(A)
+ * b) LIS(Z_i) = Z_i => LIS(LIS(Z)) = LIS(Z) = LIS(A)
+ * So, given valid array of LIS values, one of the sequence that generates this
+ * array is Z, Z_i = LIS(Z_i)
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main (void) {
+  char str[25];
+
+  // get number of testing cases
+  int t; scanf("%d\n", &t);
+
+  while (t--) {
+
+    char *r;
+
+    int n; scanf("%d\n", &n);
+    r = fgets(str, 24, stdin);
+    if (r) {
+      char c = *r;
+      while (c != 0 && c != '\n' && c != '\r') {
+        if (c != ' ') {
+          putchar(c);
+        }
+        r++;
+        c = *r;
+      }
+      printf("\n");
+    }
+  }
+
+  return 0;
+}
