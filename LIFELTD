@@ -1,0 +1,32 @@
+
+#include <stdio.h>
+
+int main(){
+  int t;
+  scanf("%d",&t);
+  while(t--){
+	  char arr1[3][3];
+	  for(int i=0;i<3;i++){
+	      scanf("%s",arr1[i]);
+	  }
+	  if(arr1[0][0]=='l' && arr1[1][0]=='l' && arr1[1][1]=='l'){
+	      printf("yes\n");
+	 
+	  }
+	  else if(arr1[0][1]=='l' && arr1[1][1]=='l' && arr1[1][2]=='l'){
+	      printf("yes\n");
+	  
+	  }
+	  else if(arr1[1][0]=='l' && arr1[2][0]=='l' && arr1[2][1]=='l'){
+	      printf("yes\n");
+	     
+	  }
+	  else if(arr1[1][1]=='l' && arr1[2][1]=='l' && arr1[2][2]=='l'){
+	      printf("yes\n");
+	  
+	  }
+	  else
+	     printf("no\n");
+  }
+  return 0;
+}
