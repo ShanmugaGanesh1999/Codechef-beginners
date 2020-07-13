@@ -1,0 +1,12 @@
+n = int(input())
+T = [None,None,None]
+for c,t in zip(map(int,input().split()),map(int,input().split())):
+    if not T[t-1]: T[t-1] = c
+    elif c<T[t-1]: T[t-1] = c
+
+s1,s2 = 0,0
+if T[0] and T[1]: s1 = T[0]+T[1]
+if T[2]: s2 = T[2]
+
+if 0 in (s1,s2): print(max(s1,s2))
+else: print(min(s1,s2))
