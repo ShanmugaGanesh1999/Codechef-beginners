@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main(void) {
+	// your code goes here
+	int t;
+	scanf("%d",&t);
+	for(int k=0;k<t;++k)
+	{
+	    long long int m,n,a,b,k,c=0,d=0;
+	    scanf("%lld %lld %lld %lld",&n,&a,&b,&k);
+	    c=n/a;
+	    d=n/b;
+	    if(a%b==0)
+          m=d-c;
+         else if(b%a==0)
+         m=c-d;
+         
+         else
+         {
+             long f=n/(a*b);
+             
+             m=c+d-(2*f);
+        }
+	    if(m>=k)
+	    printf("Win\n");
+        else printf("Lose\n");
+	}
+	return 0;
+}
+
