@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+	int t;
+	long int n,price,quantity,discount;
+	double addp,subp,tloss,loss;
+	scanf("%d",&t);
+	while(t--)
+	{    tloss=0;
+	    scanf("%ld",&n);
+	    
+	    while(n--)
+	    {scanf("%ld%ld%ld",&price,&quantity,&discount);
+	    addp=(price+(price*(discount*0.01)));
+	    subp=(addp-(addp*(discount*0.01)));
+	    loss=((price-subp)*quantity);
+	    tloss=tloss+loss;}
+	    printf("%0.09lf\n",tloss);
+	}
+	return 0;
+}
+
