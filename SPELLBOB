@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main()
+{
+	int t;
+	char a[5],b[5];
+	scanf("%d",&t);
+	while(t--)
+	{
+		scanf("%c",&a[0]);
+		scanf("%c",&a[1]);
+		scanf("%c",&a[2]);
+		scanf("%c",&a[3]);
+		scanf("%c",&b[0]);
+		scanf("%c",&b[1]);
+		scanf("%c",&b[2]);
+		scanf("%c",&b[3]);
+		if((a[1]=='o'||b[1]=='o')&&(a[2]=='b'||b[2]=='b')&&(a[3]=='b'||b[3]=='b'))
+			printf("yes\n");
+		else if((a[2]=='o'||b[2]=='o')&&(a[1]=='b'||b[1]=='b')&&(a[3]=='b'||b[3]=='b'))
+			printf("yes\n");
+		else if((a[3]=='o'||b[3]=='o')&&(a[2]=='b'||b[2]=='b')&&(a[1]=='b'||b[1]=='b'))
+			printf("yes\n");
+		else
+			printf("no\n");
+	}
+	return 0;
+}
