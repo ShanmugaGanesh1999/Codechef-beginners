@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+int main(void) {
+	// your code goes here
+	int t;
+	scanf("%d",&t);
+	while(t--)
+	{
+	    int n,k,i,j,c=0;
+	    scanf("%d%d",&n,&k);
+	    char a[n],x;
+	    for(i=0;i<n;i++)
+	    {
+	        scanf(" %c",&x);
+	        a[i]=x;
+	    }
+	    i=n-1;
+	    while(k!=0)
+	    {
+	        c=0;
+	        if(a[i]=='H')
+	        {
+	            for(j=0;j<i;j++)
+	            {
+	                if(a[j]=='H')
+	                a[j]='T';
+	                else
+	                {
+	                    a[j]='H';
+	                    c++;
+	                }
+	            }
+	        }
+	        else
+	        {
+	            for(j=0;j<i;j++)
+	            {
+	                if(a[j]=='H')
+	                c++;
+	            }
+	        }
+	        i--;
+	        k--;
+	    }
+	    printf("%d\n",c);
+	}
+	return 0;
+}
