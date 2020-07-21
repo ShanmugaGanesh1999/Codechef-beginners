@@ -1,0 +1,27 @@
+#include <stdio.h>
+int main(void) 
+{
+   int T,i,N,j;
+   scanf("%d",&T);
+   int min;
+   for(i=0;i<T;i++)
+       {
+           scanf("%d",&N);
+           int a[N];
+           for(j=0;j<N;j++)
+               {
+                   scanf("%d",&a[j]);
+               }
+             min =a[0];
+             for(j=0;j<N;j++)
+                  {
+                      if(min>=a[j])
+                        {
+                            min=a[j];
+                        }
+                  }
+                printf("%d\n",min);  
+          }
+	return 0;
+}
+
