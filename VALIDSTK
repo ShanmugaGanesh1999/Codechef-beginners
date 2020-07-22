@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include<stdbool.h>
+int main(void) {
+	int t;
+	long int a,b,c;
+	bool valid;
+	scanf("%d",&t);
+	while(t--){
+	    valid = true;
+	    c=0;
+	    scanf("%ld",&a);
+	    for(long int i=0;i<a;i++){
+	        scanf("%ld",&b);
+	        if(b==0){
+	            if(c<=0)
+	                valid = false;
+	            else
+	                c--;
+	        }
+	        else{
+	            c++;
+	        }
+	    }
+	    if(valid==false)
+	        printf("Invalid\n");
+	    else
+	        printf("Valid\n");
+	}
+	return 0;
+}
