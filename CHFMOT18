@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main(void) {
+	// your code goes here
+	long int t;
+	scanf("%ld\n", &t);
+	while(t--){
+		long int s,n,a=0;
+		scanf("%ld %ld", &s, &n);
+		if(s%2!=0){
+		    a++;
+		    s=s-1;
+		}
+		a=a+(s/n);
+		if(s%n!=0){
+		    a++;
+		}
+		printf("%ld\n",a);
+	}
+	return 0;
+}
