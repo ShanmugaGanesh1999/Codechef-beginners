@@ -1,0 +1,35 @@
+#include <stdio.h>
+int maxCheck(int a, int b, int c, int d){
+    if(a==b){
+        if(c==d){
+            return 1;
+        }
+        else    return 0;
+    }
+    else if(a>b){
+        if(c>d)
+            return 1;
+        else
+            return 0;
+    }
+    else{
+        if(c<d) return 1;
+        else    return 0;
+    }
+}
+int main(void) {
+	int t;
+	scanf("%d", &t);
+	while(t--){
+	    int a1, a2, a3, c1, c2, c3;
+	    scanf("%d%d%d%d%d%d", &a1,&a2,&a3,&c1,&c2,&c3);
+	    if (maxCheck(a1, a2, c1, c2)&&maxCheck(a2, a3, c2, c3)&&maxCheck(a1, a3, c1, c3)){
+	        printf("FAIR\n");
+	    }
+	    else{
+	        printf("NOT FAIR\n");
+	    }
+	}
+	return 0;
+}
+
