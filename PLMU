@@ -1,0 +1,45 @@
+#include<stdio.h>
+inline int input()
+{
+    int a=0;
+    char c;
+    c=getchar_unlocked();
+    while(c<33)
+    {
+        c=getchar_unlocked();
+    }
+    while(c>=33)
+    {
+        a=(a<<3)+(a<<1)+(c-'0');
+        c=getchar_unlocked();
+    }
+    return a;
+};
+int main(void)
+{
+    int t, n, arr[40001], i, countTwo, countZero, pairs;
+    t = input();
+    while(t--)
+    {
+        n = input();
+        countTwo = 0;
+        countZero = 0;
+        for(i=0; i<n; i++)
+        {
+            arr[i] = input();
+            if(arr[i] == 2) countTwo++;
+            else if(arr[i] == 0) countZero++;
+        }
+        pairs = 0;
+        if(countTwo >= 2)
+        {
+            pairs += ((countTwo-1)*countTwo)>>1;  //right shift by 1 means dividing by 2
+        }
+        if(countZero >= 2)
+        {
+            pairs += ((countZero-1)*countZero)>>1;
+        }
+        printf("%d\n", pairs);
+    }
+    return 0;
+}
