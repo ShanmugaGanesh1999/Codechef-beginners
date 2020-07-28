@@ -1,0 +1,23 @@
+#include<stdio.h>
+
+int main(){
+ int T, W[3],S, forward, reverse;
+ scanf("%d", &T);
+ while(T--){
+    scanf("%d %d %d %d", &S, &W[0], &W[1], &W[2]);
+    //printf("%d %d %d %d %d\n", T, S, W[0], W[1], W[2]);
+
+    if(S >= W[0] + W[1] + W[2])
+        printf("1\n");
+
+    else if(S >= W[0] + W[1] || S >= W[1] + W[2])
+        printf("2\n");
+
+    else
+        printf("3\n");
+
+
+    }
+ }
+
+
