@@ -1,0 +1,27 @@
+#include<stdio.h>
+
+int main()
+{
+    int T;
+    scanf("%d",&T);
+    for(int i=0;i<T;i++)
+    {
+        int N;
+        scanf("%d",&N);
+        int S[N],P[N],V[N],profit[N];
+        for(int x=0;x<N;x++)
+        {
+            scanf("%d %d %d",&S[x],&P[x],&V[x]);
+            S[x]++;
+            profit[x]=P[x]/S[x];
+            profit[x]=profit[x]*V[x];
+        }
+        int max=profit[0];
+        for(int x=0;x<N;x++)
+        {
+            if(profit[x]>max)
+            max=profit[x];
+        }
+        printf("%d\n",max);
+    }
+}
