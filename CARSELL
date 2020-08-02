@@ -1,0 +1,16 @@
+for _ in range(int(input())):
+    
+    profit=0
+    
+    
+    n=int(input())
+    lista=list(map(int,input().split()))
+    lista.sort(reverse=True)
+    
+    for i in range(n):
+        if(lista[i]-i>0):
+            profit+=lista[i]-i
+        else:
+            break
+    
+    print(profit%1000000007)
