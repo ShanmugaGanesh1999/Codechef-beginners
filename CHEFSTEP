@@ -1,0 +1,11 @@
+T = int(input())
+while T>0:
+    N,K = [int(a) for a in input().strip().split()]
+    line = [int(a) for a in input().strip().split()]
+    for l in line:
+        if l%K == 0:
+            print("1",end="")
+        else:
+            print("0",end="")
+    print()    
+    T -= 1
