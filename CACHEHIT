@@ -1,0 +1,10 @@
+for _ in range(int(input())):
+    n,b,m = map(int,input().split())
+    x = list(map(int,input().split()))
+
+    c = 1    
+    for i in range(1,m):
+        if (x[i-1]//b) != (x[i]//b):
+            c += 1
+    
+    print(c)
