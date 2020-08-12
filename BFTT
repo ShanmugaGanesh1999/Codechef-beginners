@@ -1,0 +1,32 @@
+#include<stdio.h>
+int main()
+{
+	int cases,i=0,j,k,l,m,count=0;
+	scanf("%d",&cases);
+	while(cases--)
+	{
+		scanf("%d",&j);
+		while(1)
+		{
+			count=0;
+			j++;
+			l=j;
+			
+			while(l>0)
+			{
+				
+				k=l%10;
+				if(k==3)
+				count++;
+				l=l/10;
+			}
+			if(count>=3)
+			{ printf("%d\n",j);
+				break;
+			}
+			
+		}
+		
+		
+	}
+	} 
