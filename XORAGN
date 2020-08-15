@@ -1,0 +1,51 @@
+int c:
+#include <stdio.h>
+#include <stdlib.h>
+inline int input(){
+    int a=0;
+    char c;
+    c=getchar_unlocked();
+    while(c<33)
+    {
+        c=getchar_unlocked();
+    }
+    while(c>=33)
+    {
+        a=(a<<3)+(a<<1)+(c-'0');
+        c=getchar_unlocked();
+    }
+    return a;
+};
+
+int main(void) {
+	int t, n, val, i;
+	int arr[100001];
+	
+	t = input();
+	while(t--){
+	    n = input();
+	    for(i=0; i<n; i++){
+	        arr[i] = input();
+	        arr[i] *= 2;
+	    }
+	    val = 0;
+	    for(i=0; i<n; i++){
+	        val = (val^arr[i]);
+	    }
+	    printf("%d\n", val);
+	}
+	
+	return 0;
+}
+or in python:
+for i in range(int(input())):
+    n=int(input())
+    l=list(map(int,input().split()))
+    a=l[0]
+    for i in range(1,n):
+        a^=l[i]
+    print(a*2)
+
+
+
+
