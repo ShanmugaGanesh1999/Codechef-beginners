@@ -1,0 +1,20 @@
+# cook your dish here
+for _ in range(int(input())):
+    n=input()
+    q=list(n)
+    #print(q)
+    n1=q.copy()
+    n2=q.copy()
+    s=n1.pop(0)
+    n1.append(s)
+    #print(n1)
+    l=len(n2)-1
+    a=n2.pop(l)
+    n2.insert(0,a)
+   # print(n2)
+    if n1==n2:
+        print("YES")
+    else:
+        print("NO")
+    
+        
