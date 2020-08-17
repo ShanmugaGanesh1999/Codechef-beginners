@@ -1,0 +1,33 @@
+#include <stdio.h>
+void calculate(char *v,int *x,int *y)
+{
+    int a=0,b=0,d=0;
+    char c=0;
+    for(char *p=v;*p;p++)
+        switch(*p)
+        {
+            case 'A':a++;
+            if(c=='A') {a+=d; d=0;}
+            else {c='A'; d=0;}
+            break;
+            case 'B':b++;
+            if(c=='B') {b+=d; d=0;}
+            else {c='B'; d=0;}
+            break;
+            case '.':d++; break;
+        }
+    *x=a; *y=b;
+}
+int main()
+{
+    int T,a,b;
+    char v[100001];
+    scanf("%d",&T);
+    while(T--)
+    {
+        scanf("%s",v);
+        calculate(v,&a,&b);
+        printf("%d %d\n",a,b);
+    }
+    return 0;
+}
