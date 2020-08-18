@@ -1,0 +1,30 @@
+#include<stdio.h>
+int main(){
+int s,t,i,j,p,a[1009];long n;
+scanf("%d",&t);
+while(t--){
+        scanf("%ld",&n);
+        for(i=0;i<n;i++){
+            scanf("%d",&a[i]);
+ 
+        }p=a[0];
+        for(j=1;j<n;j++){
+            s=gcd(p,a[j]);
+            }
+            if(s==1){
+                printf("0\n");
+            }
+            else{
+                printf("-1\n");
+            }
+ 
+            }
+            return 0;
+}
+ 
+int gcd(int a, int b)
+{
+    if (a == 0)
+        return b;
+    return gcd(b % a, a);
+} 
