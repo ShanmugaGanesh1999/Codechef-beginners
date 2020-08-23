@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+int main()
+{
+    int T;
+    scanf("%d",&T);
+    while(T--)
+    {
+        long a,b,n;
+        scanf("%ld %ld %ld",&a,&b,&n);
+        if(n%2==0)
+        {
+            a=a*a;
+            b=b*b;
+        }
+        if(a>b)
+            printf("1\n");
+        else if(a<b)
+            printf("2\n");
+        else
+            printf("0\n");
+
+    }
+}
