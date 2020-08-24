@@ -1,0 +1,69 @@
+in c,
+#include <stdio.h>
+unsigned long long int hcf( unsigned long long int a,unsigned long long int b){
+	if(b == 0) return a;
+	else return hcf(b, a%b);
+}
+ 
+int main(void)
+{
+ 
+ int t;
+ scanf("%d",&t);
+ while(t--)
+ {
+    int n;
+    scanf("%d",&n);
+    int i,j;
+    unsigned long long int arr[n],min=9999999999999999999999, gcd, lcm;
+    for(i=0; i<n; i++)
+    {
+    	scanf("%llu",&arr[i]); 	
+    }
+    for(i=0;i<n; i++)
+    {
+ 	    for(j=i+1; j<n ; j++)
+ 	    {
+ 		    if( arr[i] > min || arr[j] > min) continue;
+ 	    	gcd= hcf(arr[i],arr[j]);
+ 	    	lcm= (arr[i]* arr[j])/gcd;
+ 	    	if(min > lcm) min=lcm; 
+ 		
+    	}
+    }
+    printf("%llu \n",min);
+ } 
+ 
+}    
+
+in py,
+# cook your dish here
+# cook your dish here
+def hcf_find(num1, num2) :
+    
+    while num1 > 0 and num2 > 0 :
+        temp = num1
+        num1 = num2 % num1 
+        num2 = temp
+    
+    return num2 
+test_case = int(input())
+while test_case :
+    no_of_sensors = int(input())
+    timings = list(map(int, input().strip().split()))
+    
+    lcm_list = []
+    
+    for index1 in range(no_of_sensors) :
+        for index2 in range(index1+1, no_of_sensors) :
+            temp1, temp2 = timings[index1], timings[index2]
+            lcm = (timings[index1] * timings[index2]) // hcf_find(temp1, temp2)
+            lcm_list.append(lcm)
+    
+    
+    
+    
+    print(min(lcm_list))
+    
+    test_case -= 1
+  
