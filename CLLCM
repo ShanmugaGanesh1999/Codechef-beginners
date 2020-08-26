@@ -1,0 +1,14 @@
+# cook your dish here
+for i in range(int(input())):
+    n = int(input())
+    p=True
+    a = [int(x) for x in input().split()]
+    for j in a:
+        if j%2==0:
+            p=False
+            break
+    if p:
+        print("YES")
+    else:
+        
+        print("NO")
