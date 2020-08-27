@@ -1,0 +1,14 @@
+n,k=map(int,input().split())
+arr=[0]*n
+c=0
+for i in range(n):
+    if i<k:
+        arr[i]=1
+        c+=1
+    else:
+        arr[i]=c
+        c+=arr[i]-arr[i-k]
+print(arr[n-1]%1000000007)
+
+
+    
