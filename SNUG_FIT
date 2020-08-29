@@ -1,0 +1,13 @@
+# cook your dish here
+t = int(input())
+while t != 0:
+    n = int(input())
+    a = list(map(int,input().split()))
+    b = list(map(int,input().split()))
+    a.sort()
+    b.sort()
+    s = 0
+    for i in range(n):
+        s += min(a[i], b[i])
+    print(s)
+    t -= 1
