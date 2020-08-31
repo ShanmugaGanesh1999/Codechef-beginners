@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main(void) {
+	// your code goes here
+	int t;
+	scanf("%d",&t);
+	while(t--){
+	    char a[10];
+	    scanf("%s",a);
+	    int i,j,flag=1;
+	    int n=strlen(a);
+	    for(i=0;i<n;i++){
+	        if(a[i]>a[i+1]){
+	            for(j=i;j<n;j++){
+	                a[j]=a[j+1];
+	            }
+	            a[n-1]=0;
+	            flag=0;
+	            break;
+	        }
+	    }
+	    if(flag==1) a[n-1]=0;
+	    printf("%s\n",a);
+	}
+	return 0;
+}
