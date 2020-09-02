@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+inline long long int input(){
+    long long int a=0;
+    char c;
+    c=getchar_unlocked();
+    while(c<33)
+    {
+        c=getchar_unlocked();
+    }
+    while(c>=33)
+    {
+        a=(a<<3)+(a<<1)+(c-'0');
+        c=getchar_unlocked();
+    }
+    return a;
+};
+
+int main(void) {
+	long long int t, l, r, count;
+	t = input();
+	
+	while(t--){
+	    l = input();
+	    r = input();
+	    
+	    count = 0;
+	    //Xor of odd 1's is 1 and even 1's is 0
+	    if(l%2==0 && r%2==0){
+	        count = (r-l)/2;
+	    }
+	    else{
+	        count = (r-l)/2 + 1;
+	    }
+	    
+	    if(count%2==0){
+	        printf("Even\n");
+	    }
+	    else{
+	        printf("Odd\n");
+	    }
+	}
+	return 0;
+}
+
