@@ -1,0 +1,48 @@
+#include <stdio.h>
+int main(void) {
+	// your code goes here
+	int t;
+	scanf("%d",&t);
+	while(t--)
+	{
+		int n,m,k,l,r;long long int min=1000001;
+		scanf("%d%d%d%d%d",&n,&m,&k,&l,&r);
+		int c,p;int count=0;
+		int i;
+		for(i=0;i<n;i++)
+		{
+		scanf("%d%d",&c,&p);
+	
+		if(c>k+1)
+		{
+			c=c-m;
+			if(c<k)
+			c=k;
+		}
+		else if(c<k-1)
+		{
+			c=c+m;
+			if(c>k)
+			c=k;
+		}
+		else 
+		{
+			c=k;
+		}
+	if(c>=l&&c<=r)
+	{
+		if(p<min)
+		min=p;
+	}
+	else
+	count++;	
+	}
+	if(count==n)
+	printf("-1\n");
+	else
+		printf("%lld\n",min);
+
+}
+	return 0;
+}
+
