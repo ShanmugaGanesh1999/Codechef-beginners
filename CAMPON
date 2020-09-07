@@ -1,0 +1,42 @@
+#include <stdio.h>
+int main() 
+{
+	int t;
+	scanf("%d",&t);
+	while(t--)
+	{
+	    int n;
+	    scanf("%d",&n);
+	    int a[32]={0};
+	    while(n--)
+	    {
+	        int e,k;
+	        scanf("%d %d",&e,&k);
+	        for(int j=e;j<=31;j++)
+	        {
+	            a[j]=a[j]+k;
+	        }
+	    }
+	    //for(int i=1;i<=31;i++)
+	    //{
+	      //  printf("%d %d\n",i,a[i]);
+	    //}
+	    int m;
+	    scanf("%d",&m);
+	    while(m--)
+	    {
+	        int d,p;
+	        scanf("%d %d",&d,&p);
+	        if(a[d]>=p)
+	        {
+	            printf("Go Camp\n");
+	        }
+	        else
+	        {
+	            printf("Go Sleep\n");
+	        }
+	    }
+	}
+	return 0;
+}
+
