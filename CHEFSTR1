@@ -1,0 +1,11 @@
+t=int(input())# cook your dish here
+while t:
+    n=int(input())
+    x=list(map(int,input().split()))
+    a=x[0]
+    s=0
+    for i in range(1,n):
+        s+=(abs(a-x[i])-1)
+        a=x[i]
+    print(s)    
+    t-=1
