@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main(void) {
+	int T;
+	scanf("%d",&T);
+	while(T--) {
+	    int n;
+	    scanf("%d", &n);
+	    if(n <= 250000) n = n-(n/100*0)-0;
+	    else if(n <= 500000) n = n-(n-250000)/100*5;
+	    else if(n <= 750000) n = n-(n-500000)/100*10-12500;
+	    else if(n <= 1000000) n = n-(n-750000)/100*15-37500;
+	    else if(n <= 1250000) n = n-(n-1000000)/100*20-75000;
+	    else if(n <= 1500000) n = n-(n-1250000)/100*25-125000;
+	    else n = n-(n-1500000)/100*30-187500;
+	    printf("%d\n", n);
+	}
+	return 0;
+}
+
