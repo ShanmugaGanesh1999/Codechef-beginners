@@ -1,0 +1,42 @@
+#include <stdio.h>
+
+int main(void) {
+	int t,r,c,i,j,a;
+	scanf("%d",&t); 
+	while(t--)
+	{
+	    scanf("%d %d",&r,&c);
+	    int arr[r][c];
+	    for(i=0;i<r;i++)
+	    {
+	        for(j=0;j<c;j++)
+	            scanf("%d",&arr[i][j]);
+	    }
+	    for(i=0;i<r;i++)
+	    {
+	        for(j=0;j<c;j++)
+	        {
+	            a=0;
+	            if(i!=0)
+	                a++;
+	            if(j!=0)
+	                a++;
+	            if(i!=r-1)
+	                a++;
+	            if(j!=c-1)
+	                a++;
+	            if(arr[i][j]<a)
+	                continue;
+	            else 
+	            {
+	                printf("Unstable\n");
+	                goto out;
+	            }
+	        }
+	    }
+	    printf("Stable\n");
+	    out:;
+	}
+	return 0;
+}
+
