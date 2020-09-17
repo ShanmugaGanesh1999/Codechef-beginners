@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+int main(void) {
+	// your code goes here
+	int t;
+	scanf("%d",&t);
+	while(t--)
+	{
+	    char s[1000];
+	   int  i=0,f=0;
+	   float r=0,c=0,d=0;
+	    scanf("%f",&d);
+	    scanf("%s",s);
+	    while(s[i]!='\0')
+	    {
+	      if(s[i]=='P')
+	      c++;
+	      i++;
+	    }
+	    r=c/d;
+	    for(i=2;i<d-2 && r<0.75;i++)
+	    {
+	        if((s[i-2]=='P'||s[i-1]=='P')&&(s[i+1]=='P'||s[i+2]=='P') && (s[i]=='A'))
+	        {
+	         f++;
+	         c++;
+	         r=c/d;
+	        }
+	    }
+	    if(r<0.75)
+	    printf("-1\n");
+	    else
+	    printf("%d\n",f);
+	}
+	return 0;
+}
+
