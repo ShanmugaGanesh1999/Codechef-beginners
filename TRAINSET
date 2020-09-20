@@ -1,0 +1,14 @@
+from collections import defaultdict
+
+
+for i in range(int(input())):
+
+    an = 0
+    x= defaultdict(lambda :[0,0])
+    for j in range(int(input())):
+        a,b=input().split()
+        x[a][int(b)]+=1
+    for j in x:
+
+        an+=max(x[j])
+    print(an)
