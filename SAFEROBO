@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main(void) {
+    int n,count,s1,s2,i;
+    char str[100000];
+    scanf("%d",&n);
+    while(n--){
+        scanf("%s",str);
+        scanf("%d%d",&s1,&s2);
+        for(i=0;str[i]!= 'A';i++){
+    }
+    for(i=i+1,count=0;str[i]!='B';i++,count++){
+        
+    }
+    if(count%(s1+s2)==s1+s2-1)
+    printf("unsafe\n");
+    else
+    printf("safe\n");
+    }
+	return 0;
+}
+
+
