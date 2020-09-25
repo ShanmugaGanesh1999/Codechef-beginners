@@ -1,0 +1,19 @@
+t=int(input())
+for i in range(t):
+    n=input()
+    f=[]
+    s=list(set(n))
+    for i in s:
+        k=n.count(i)
+        f.append(k)
+    f.sort()
+    flag=0
+    for i in range(len(f)-2):
+        if f[i+2]==f[i+1]+f[i]:
+            flag=0
+        else:
+            flag=1 
+    if flag==0 or len(f)<3:
+        print('Dynamic')
+    else:
+        print('Not')
