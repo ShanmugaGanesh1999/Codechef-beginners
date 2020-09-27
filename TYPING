@@ -1,0 +1,24 @@
+for _ in range(int(input())):
+    lh={'d','f'}
+    rh={'j','k'}
+    time=0
+    timing={}
+    count={}
+    for p in range(int(input())):
+        x=input()
+        c=time
+        time+=2
+        for i in range(1,len(x)):
+            if ((x[i] in lh) and (x[i-1] in lh)) or (x[i] in rh) and (x[i-1] in rh):
+                time+=4
+            else:
+                time+=2
+        if x not in count.keys():
+            timing[x]=time-c
+            count[x]=1
+        else:
+            count[x]+=1
+    for i,j in count.items():
+        if j>1:
+            time=time-(timing[i]//2)*(j-1)
+    print(time)
