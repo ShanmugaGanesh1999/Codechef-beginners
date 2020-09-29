@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<string.h>
+#include<math.h>
+
+int main()
+{
+    int t;
+    scanf("%d\n",&t);
+    while(t--){
+        int a,b,c,x,y;
+        scanf("%d%d%d%d%d",&a,&b,&c,&x,&y);
+        if(a+b+c==x+y){
+            if((x>=a||x>=b||x>=c)&&(y>=a||y>=b||y>=c)) printf("YES\n");
+            else printf("NO\n");
+        }
+        else printf("NO\n");
+    }
+    return 0;
+}   
