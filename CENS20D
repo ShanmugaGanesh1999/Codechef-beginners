@@ -1,0 +1,43 @@
+in C,
+#include<stdio.h>
+int main()
+{
+int t;
+scanf("%d",&t);
+while(t--)
+{
+int n,i,j,c=0;
+scanf("%d",&n);
+int a[n];
+for(i=0;i<n;i++)
+{
+scanf("%d",&a[i]);
+}
+for(i=0;i<n;i++)
+{
+for(j=i+1;j<n;j++)
+{
+if((a[i]&a[j])==a[i])
+c++;
+}
+}
+printf("%d\n",c);
+}
+return 0;
+}
+
+in Python,
+# cook your dish here
+try:
+    for _ in range(int(input())):
+        x = int(input())
+        a = list(map(int, input().split()))
+        count = 0
+        for i in range(len(a)):
+            for j in range(len(a)):
+                b = a[i] & a[j]
+                if i < j and b == a[i]:
+                    count += 1
+        print(count)
+except:
+    pass
