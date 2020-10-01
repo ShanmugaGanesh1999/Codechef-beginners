@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main(void) {
+	// your code goes here
+	long int t,n,count,d;
+	scanf("%ld",&t);
+	while(t--)
+	{ scanf("%ld",&n);
+	  d = n/26;
+	  count = 1;
+	  while(d--) count *= 2;
+	  d = n%26;
+	  if(d == 1 || d == 2)
+	   printf("%ld 0 0\n",count);
+	  else if(d>2&&d<11)
+	   printf("0 %ld 0\n",count);
+	  else if(d>10)
+	   printf("0 0 %ld\n",count);
+	  else
+	   printf("0 0 %ld\n",count/2);
+	} 
+	return 0;
+}
+
