@@ -1,0 +1,45 @@
+# cook your dish here
+import sys
+swaps = ((0,1),(1,2),(3,4),(4,5),(6,7),(7,8),(0,3),(3,6),(1,4),(4,7),(2,5),(5,8))
+primes = {3,5,7,11,13,17}
+
+def boardfile(f):
+    no = int(next(f))
+    for _ in range(no):
+        next(f)
+        b = []
+        for _ in range(3):
+            b.extend([int(x) for x in next(f).strip().split()])
+        yield tuple(b)
+    return
+
+def swap(board, swap):
+    b = list(board)
+    b[swap[0]], b[swap[1]] = b[swap[1]], b[swap[0]]
+    return tuple(b)
+
+def init_db():
+    board = (1,2,3,4,5,6,7,8,9)
+    bfs = [board]
+    seen = {board:0}
+    for board in bfs:
+        for s in [(a, b) for a, b in swaps if board[a] + board[b] in primes]:
+            newboard = swap(board, s)
+            if newboard in seen:
+                continue
+            bfs.append(newboard)
+            seen[newboard] = seen[board] + 1
+    return seen
+
+def do_board(board):
+    if board in solved:
+        return solved[board]
+    return -1
+
+def do_file(f):
+    for board in boardfile(f):
+        steps = do_board(board)
+        print(steps)
+
+solved = init_db()
+do_file(sys.stdin)
