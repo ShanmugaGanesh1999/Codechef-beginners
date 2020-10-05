@@ -1,0 +1,39 @@
+in C,
+#include <stdio.h>
+#include<math.h>
+int main(void) {
+int t;
+   scanf("%d",&t);
+   while(t--)
+   {
+       long long int n,a,b,c,d,p,q,y,walk,train,i,time;
+       scanf("%lld%lld%lld%lld%lld%lld%lld%lld",&n,&a,&b,&c,&d,&p,&q,&y);
+       int arr[n];
+       for(i=1;i<=n;i++)
+           scanf("%d",&arr[i]);
+       walk=abs(arr[b]-arr[a])*p;
+       time=abs(arr[c]-arr[a])*p;
+       if(time<=y)
+       {
+           train=y+(abs(arr[d]-arr[c])*q)+(abs(arr[d]-arr[b])*p);
+           if(train<walk)
+               printf("%lld\n",train);
+           else
+               printf("%lld\n",walk);
+       }
+       else
+           printf("%lld\n",walk);
+   }
+return 0;
+}
+in Py,
+for _ in range(int(input())):
+    n, a, b, c, d, p, q, y = [int(x) for x in input().split()]
+    ls = [int(x) for x in input().split()]
+    ac = p*abs(ls[a-1]-ls[c-1])
+    if  ac > y :
+        tot  = p*abs(ls[a-1]-ls[b-1])
+    else:
+        trains = y + q*abs(ls[d-1]-ls[c-1]) + p*abs(ls[b-1]-ls[d-1])
+        tot = min(trains,abs(ls[a-1]-ls[b-1])*p)
+    print(tot)
