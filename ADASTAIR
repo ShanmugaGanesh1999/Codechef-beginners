@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main()
+{
+   int T,N,K,h[130],sum,i;
+   scanf("%d",&T);
+   while(T--)
+   {
+       sum=0;
+       scanf("%d%d",&N,&K);
+       for(i=0;i<N;i++)
+           scanf("%d",&h[i]);
+           sum=(h[0]-1)/K;
+       for(i=0;i<N-1;i++)
+           sum=sum+(h[i+1]-h[i]-1)/K;
+       printf("%d\n",sum);
+   }
+    return 0;
+}
